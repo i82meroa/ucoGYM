@@ -24,3 +24,32 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+ion-header{
+    margin-bottom: 2rem;
+}
+
+ion-input{
+    border: 3px solid #3880ff;
+    border-radius: 10px;
+    margin: 1rem;
+    margin-top: 0.3rem;
+    max-width: 85%;
+}
+
+ion-label, p{
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+p{
+    text-align: center;
+}
+
+ion-button{
+    border-radius: 10px;
+    width: 85%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
