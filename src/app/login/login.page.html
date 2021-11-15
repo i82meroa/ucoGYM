@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Inicie sesión
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-label for="email">Email:</ion-label>
+  <ion-input type="text" [(ngModel)]="email" placeholder="Escribir aquí..."></ion-input>
+  <ion-label for="password">Password:</ion-label>
+  <ion-input type="password" [(ngModel)]="password" placeholder="Escribir aquí..."></ion-input>
+
+  <ion-button (click) = "login()">Login</ion-button>
+
+  <p style="margin: 1rem; color: rgb(192, 34, 34)">{{mensajeError}}</p>
+
+  <p>¿No tiene cuenta? 
+    <ion-label style="font-weight: 800; color: #3880ff" (click) = "irRegistro()">
+      Regístrese
+    </ion-label>
+  </p>
+
+</ion-content>
