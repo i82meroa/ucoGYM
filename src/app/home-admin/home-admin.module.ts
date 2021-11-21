@@ -2,10 +2,10 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Tab1AdminPage } from './tab1-admin.page';
+import { HomeAdminPage } from './home-admin.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
-import { Tab1AdminPageRoutingModule } from './tab1-admin-routing.module';
+import { HomeAdminPageRoutingModule } from './home-admin-routing.module';
 
 @NgModule({
   imports: [
@@ -13,8 +13,8 @@ import { Tab1AdminPageRoutingModule } from './tab1-admin-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab1AdminPageRoutingModule
+    HomeAdminPageRoutingModule
   ],
-  declarations: [Tab1AdminPage]
+  declarations: [HomeAdminPage]
 })
-export class Tab1AdminPageModule {}
+export class HomeAdminPageModule {}
