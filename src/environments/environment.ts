@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  auth: false,
+  aforoTotal: 100,
+  precioMinuto: 2,
   firebase: {
     apiKey: 'AIzaSyDvQ3iBps5Mt1oUpy-vaJqfFT1cncqKayA',
     authDomain: 'ucogym.firebaseapp.com',
