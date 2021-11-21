@@ -1,12 +1,12 @@
 <ion-header translucent no-border>
   <ion-toolbar>
-    <ion-buttons slot="end">
-      <button ion-button slot="icon-only" name="logout" (click) = "logout()"></button>
-    </ion-buttons>
+      <button ion-button slot="end" (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content fullscreen="true" slot="fixed" >
+<ion-content fullscreen="true" slot="fixed" class="weight-card">
     <div class="profile">
       <div class="header">
         <div class="avatar">
@@ -15,29 +15,17 @@
       </div>
       <div class="profile-body">
         <div class="user-meta ion-text-center">
-          <h3 class="username">@nombre de usuario</h3>
+          <h3 class="username">@{{username}}</h3>
         </div>
 
-        <ion-button expand="full" color="primary">Ver historial</ion-button>
+        <ion-card>
+          <ion-card-content>
+            <ion-card-title>Último pesaje</ion-card-title>
+            <ion-card-subtitle>50 kg</ion-card-subtitle>
+            <ion-button expand="full" fill="clear">Ver historial</ion-button>
+          </ion-card-content>
+        </ion-card>
 
       </div>
     </div>
 </ion-content>
-
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Bienvenido
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-
-
-  ¡Home del usuario!
-  Estamos logueados.
-
-  <ion-button color="danger" (click) = "logout()">Logout</ion-button>
-
-</ion-content> -->
