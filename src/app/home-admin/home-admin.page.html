@@ -1,15 +1,30 @@
-<ion-header [translucent]="true">
+<ion-header translucent no-border>
   <ion-toolbar>
-    <ion-title>
-      Tab Admin 1
-    </ion-title>
+      <button ion-button slot="end" (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  ¡Home del administrador!
-  Estamos logueados.
+<ion-content fullscreen="true" slot="fixed" class="admin-options-card">
+    <div class="profile">
+      <div class="header">
+        <div class="avatar">
+          <img src="../../assets/admin_avatar.png" alt="">
+        </div>
+      </div>
+      <div class="profile-body">
+        <div class="user-meta ion-text-center">
+          <h3 class="username">@{{username}}</h3>
+        </div>
 
-  <ion-button color="danger" (click) = "logout()">Logout</ion-button>
+        <ion-card>
+          <ion-card-content>
+            <ion-button expand="full" fill="clear">Añadir rutina</ion-button>
+            <ion-button expand="full" fill="clear">Añadir pesaje</ion-button>
+          </ion-card-content>
+        </ion-card>
 
+      </div>
+    </div>
 </ion-content>
