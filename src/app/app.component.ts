@@ -12,10 +12,10 @@ export class AppComponent {
   constructor(private platform: Platform, private router: Router) {
     platform.ready().then(() => {
       if (window.localStorage.getItem('userAuth') && window.localStorage.getItem('userRol') === 'usuario'){
-        this.router.navigateByUrl('/tabs/tab1');
+        this.router.navigateByUrl('/tabs/home');
       }
       else if (window.localStorage.getItem('userAuth') && window.localStorage.getItem('userRol') === 'administrador'){
-        this.router.navigateByUrl('/tabs-admin/tab1-admin');
+        this.router.navigateByUrl('/tabs-admin/home-admin');
       }
       else {
         this.router.navigateByUrl('/login');
