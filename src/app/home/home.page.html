@@ -1,0 +1,33 @@
+<ion-header translucent no-border>
+  <ion-toolbar>
+      <button ion-button slot="end" (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" slot="fixed" class="weight-card">
+    <div class="profile">
+      <div class="header">
+        <div class="avatar">
+          <img src="../../assets/user_avatar.png" alt="">
+        </div>
+      </div>
+      <div class="profile-body">
+        <div class="user-meta ion-text-center">
+          <h3 class="username">@{{username}}</h3>
+        </div>
+
+        <ion-card>
+          <ion-card-content>
+            <ion-card-title>Último pesaje</ion-card-title>
+            <ion-card-subtitle>50 kg</ion-card-subtitle>
+            <ion-button expand="full" fill="clear">Ver historial</ion-button>
+            <ion-button expand="full" fill="clear">Editar perfil</ion-button>
+            <ion-button expand="full" fill="clear">Aforo</ion-button>
+          </ion-card-content>
+        </ion-card>
+
+      </div>
+    </div>
+</ion-content>
