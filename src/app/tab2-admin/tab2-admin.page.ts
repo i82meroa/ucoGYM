@@ -30,6 +30,7 @@ export class Tab2AdminPage {
     console.log(this.nombreRutina);
     console.log(this.ejercicios);
     set(ref(db, 'rutinas/' + this.nombreRutina), this.ejercicios);
+    this.ejercicios = [];
   };
 
   logout(){
