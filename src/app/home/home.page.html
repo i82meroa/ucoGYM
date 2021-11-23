@@ -1,8 +1,10 @@
 <ion-header translucent no-border>
   <ion-toolbar>
-      <button ion-button slot="end" (click)="logout()">
+    <ion-buttons slot="end">
+      <button ion-button slot="icon-only" (click)="logout()">
         <ion-icon name="log-out-outline"></ion-icon>
       </button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -25,6 +27,12 @@
             <ion-button expand="full" fill="clear">Ver historial</ion-button>
             <ion-button expand="full" fill="clear">Editar perfil</ion-button>
             <ion-button expand="full" fill="clear">Aforo</ion-button>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+          <ion-card-content>
+            <ion-button expand="full" fill="clear" (click)="irAforo()">Consultar aforo</ion-button>
           </ion-card-content>
         </ion-card>
 

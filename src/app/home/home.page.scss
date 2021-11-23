@@ -1,6 +1,6 @@
 ion-content {
     --background: url(../../assets/background.jpg) no-repeat top center/cover fixed, #fff;
-    position: relative;
+    position: fixed;
     height: 100%;
     width: 100%;
 
@@ -27,11 +27,11 @@ ion-icon {
     margin: 0 auto;
 
     .header {
-        height: 150px;
+        height: 200px;
 
         .avatar {
-            width: 140px;
-            height: 140px;
+            width: 160px;
+            height: 160px;
             position: relative;
             margin: 0 auto;
 
@@ -39,7 +39,7 @@ ion-icon {
                 display: block;
                 border-radius: 50%;
                 position: absolute;
-                bottom: calc(-1*(40px + 4px));
+                bottom: calc(-1*(80px + 4px)); // -42px;
                 border: 6px solid #52f7df;
                 background-color: #fff;
             }
@@ -50,7 +50,7 @@ ion-icon {
 .profile-body {
     background-color: #ffffff;
     padding: 20px;
-    height: calc(100vh - (150px + 56px));
+    height: calc(100vh - (200px + 56px));
     overflow: hidden;
 
     .user-meta {
