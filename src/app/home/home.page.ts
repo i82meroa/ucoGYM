@@ -11,13 +11,12 @@ export class HomePage {
 
   constructor(private router: Router) {}
 
-  ngAfterViewInit() {
+  ionViewDidEnter() {
     this.getUsername();
   }
 
   getUsername() {
       this.username = window.localStorage.getItem('userUsername');
-      console.log("Username is: " + this.username);
   }
 
   logout(){
