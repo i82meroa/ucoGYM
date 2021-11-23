@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, set,} from 'firebase/database';
+import { getDatabase, ref, get, child, set } from "firebase/database";
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 
@@ -15,32 +15,36 @@ import { Router } from '@angular/router';
 export class Tab2AdminPage {
   
  nombreRutina:string;
- ejercicios:any[] = [];
- ejercicio:any = {};
-
-
-       
+ ejercicios:any=[];
+ ejercicio:any= {
+  
+   
+     
+ };
 
   constructor(private router: Router) { }
 
-
 addExercise()
 {
+  console.log( this.ejercicio);
   this.ejercicios.push(this.ejercicio);
+  console.log(this.ejercicios);
   this.ejercicio = {};
 
 }
   SaveRoutine(){
 
-    const db = getDatabase();
-    const referencia =  set(ref( db,' rutinas/' + this.nombreRutina), {
-      nombreEjercicio: this.ejercicio.nombreEjercicio,
-      seriesRep: this.ejercicio.seriesRepeticiones
-    }); 
-
+    const app = initializeApp(environment.firebase);
+    const db = getDatabase(app);
+    console.log(this.nombreRutina)
+    console.log(this.ejercicios);
+    set(ref(db, 'rutinas/' + this.nombreRutina), this.ejercicios)};
     
-  }
 
+  logout(){
+    window.localStorage.clear();
+    this.router.navigateByUrl('/login');
+  }
 } 
   
   

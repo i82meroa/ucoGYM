@@ -8,13 +8,13 @@
 
 <ion-content [fullscreen]="true">
   <ion-label for="nombreRutina">Nombre Rutina:</ion-label>
-  <ion-input type="text" name="nombreRutina" [(ngModel)]="nombreRutina" placeholder="Escribir aqui..."></ion-input>
-  <ion-label for="Ejercicio">Ejercicio:</ion-label>
-  <ion-input type="text" name= "nombreEjercicio" [(ngModel)]=".ejercicio.nombreEjercicio" placeholder="Escribir aquí..."></ion-input>
-  <ion-label for="SeriesRepeticiones">Series X Repeticiones:</ion-label>
-  <ion-input type="text" name= "SeriesRepeteciones" [(ngModel)]="ejercicio.SeriesRepeticiones" placeholder="Escribir aquí..."></ion-input>
+  <ion-input type="text" [(ngModel)]="nombreRutina" placeholder="Escribir aqui..."></ion-input>
+  <ion-label for="ejercicio.NombreEjercicio">Ejercicio:</ion-label>
+  <ion-input type="text" [(ngModel)]="ejercicio.NombreEjercicio" placeholder="Escribir aquí..."></ion-input>
+  <ion-label for="ejercicio.SeriesRepeticiones">Repeticiones x Serie:</ion-label>
+  <ion-input type="text"  [(ngModel)]="ejercicio.SeriesRepeticiones" placeholder="Escribir aquí..."></ion-input>
 
-  <ion-button (click) = "AddExercise">Añadir Ejercicio</ion-button>
-  <ion-button (click) = "SaveRoutine()">Añadir Rutina</ion-button>
-
+  <ion-button  color= "primary" (click) = "addExercise()">Añadir Ejercicio</ion-button>
+  <ion-button  color= "primary" (click) = "SaveRoutine()">Añadir Rutina</ion-button>
+  
 </ion-content>
