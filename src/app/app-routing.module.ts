@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: 'tab1-admin',
     loadChildren: () => import('./tab1-admin/tab1-admin.module').then( m => m.Tab1AdminPageModule)
+  },
+  {
+    path: 'aforo',
+    loadChildren: () => import('./aforo/aforo.module').then( m => m.AforoPageModule)
   }
 ];
 @NgModule({
