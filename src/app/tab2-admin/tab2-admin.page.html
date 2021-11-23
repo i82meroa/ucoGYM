@@ -1,12 +1,20 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2 Admin
+      Añadir Rutina
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <ion-label for="nombreRutina">Nombre Rutina:</ion-label>
+  <ion-input type="text" [(ngModel)]="nombreRutina" placeholder="Escribir aqui..."></ion-input>
+  <ion-label for="ejercicio.NombreEjercicio">Ejercicio:</ion-label>
+  <ion-input type="text" [(ngModel)]="ejercicio.NombreEjercicio" placeholder="Escribir aquí..."></ion-input>
+  <ion-label for="ejercicio.SeriesRepeticiones">Repeticiones x Serie:</ion-label>
+  <ion-input type="text"  [(ngModel)]="ejercicio.SeriesRepeticiones" placeholder="Escribir aquí..."></ion-input>
 
-
+  <ion-button  color= "primary" (click) = "addExercise()">Añadir Ejercicio</ion-button>
+  <ion-button  color= "primary" (click) = "saveRoutine()">Añadir Rutina</ion-button>
+  
 </ion-content>

@@ -1,0 +1,92 @@
+ion-content {
+    --background: url(../../assets/background.jpg) no-repeat top center/cover fixed, #fff;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+
+    ion-button {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        border: 2px solid black;
+        color: black;
+    }
+}
+
+ion-toolbar {
+    --background: transparent;
+}
+
+ion-icon {
+    background-color: transparent;
+    color: turquoise;
+    width: 25px;
+    height: 25px;
+}
+
+.profile {
+    margin: 0 auto;
+
+    .header {
+        height: 200px;
+
+        .avatar {
+            width: 160px;
+            height: 160px;
+            position: relative;
+            margin: 0 auto;
+
+            img {
+                display: block;
+                border-radius: 50%;
+                position: absolute;
+                bottom: calc(-1*(80px + 4px)); // -42px;
+                border: 6px solid #52f7df;
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+.profile-body {
+    background-color: #ffffff;
+    padding: 20px;
+    height: calc(100vh - (200px + 56px));
+    overflow: hidden;
+
+    .user-meta {
+        padding-top: 20px;
+
+        .username {
+            font-size: 24px;
+            font-weight: 600;
+            color: #303940;
+        }
+    }
+}
+
+.weight-card {
+
+    ion-card {
+      position: relative;
+      text-align: center;
+      background-color: #f5f5f5;
+    }
+  
+    .card-title {
+      position: absolute;
+      top: 36%;
+      font-size: 2.0em;
+      width: 100%;
+      font-weight: bold;
+      color: black;
+    }
+  
+    .card-subtitle {
+      font-size: 1.0em;
+      position: absolute;
+      top: 52%;
+      width: 100%;
+      color: rgb(88, 88, 88);
+    }
+  
+  }
