@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'signup',
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
+  },
+  {
+    path: 'aforo',
+    loadChildren: () => import('./aforo/aforo.module').then( m => m.AforoPageModule)
   }
 ];
 @NgModule({

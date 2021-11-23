@@ -1,0 +1,50 @@
+ion-content {
+    --background: url(../../assets/background.jpg) no-repeat top center/cover fixed, #fff;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+ion-toolbar {
+    --background: transparent;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.aforo {
+    margin: 0 auto;
+
+    .header {
+        height: 100px;
+    }
+}
+
+.aforo-card {
+  ion-card {
+    position: relative;
+    text-align: center;
+    background-color: #f5f5f5;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 36%;
+    font-size: 1.5em;
+    width: 100%;
+    font-weight: bold;
+    color: black;
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: red;
+  }
+
+}

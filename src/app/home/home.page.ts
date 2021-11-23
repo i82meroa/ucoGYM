@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
   username: string;
+  aforo: string;
 
   constructor(private router: Router) {}
 
@@ -18,6 +19,10 @@ export class HomePage {
   getUsername() {
       this.username = window.localStorage.getItem('userUsername');
       console.log("Username is: " + this.username);
+  }
+
+  irAforo() {
+    this.router.navigateByUrl('/aforo');
   }
 
   logout(){
