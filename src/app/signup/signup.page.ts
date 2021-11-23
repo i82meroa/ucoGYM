@@ -41,7 +41,7 @@ export class SignupPage{
           fechaNacimiento: this.fechaNacimiento,
           rol: 'usuario'
         });
-        this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/login');
       }else{
         this.mensajeErrorUsuario='El nombre de usuario ya existe';
       }
