@@ -15,6 +15,7 @@ export class Tab2Page {
   // eslint-disable-next-line @typescript-eslint/ban-types
   scannedBarCode: {};
   barcodeScannerOptions: BarcodeScannerOptions;
+  currentDate: string = new Date().toLocaleDateString();
   mensajito: string;
   labelBoton: string;
   userEntry: boolean;
@@ -68,6 +69,9 @@ export class Tab2Page {
             set(ref(db, 'fichajes/' + window.localStorage.getItem('userUsername')), {
               horaEntrada: fechaHoraActual.toString(),
             });
+            set(ref(db, 'aforo/' + this.currentDate), {
+              aforoActual: parseInt(window.localStorage.getItem('aforoActual'))+1,
+            });
             this.mensajito = '¡Entrada registrada!';
             document.getElementById('boton-qr').style.display = 'none';
             document.getElementById('imagen-exito').style.display = 'block';
@@ -92,6 +96,10 @@ export class Tab2Page {
               }
             }).catch((error) => {
               console.error(error);
+            });
+
+            set(ref(db, 'aforo/' + this.currentDate), {
+              aforoActual: parseInt(window.localStorage.getItem('aforoActual'))-1,
             });
 
             document.getElementById('coste-total').style.display = 'block';
