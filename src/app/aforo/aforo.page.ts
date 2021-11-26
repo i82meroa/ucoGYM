@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { getDatabase, ref, get, child, set } from 'firebase/database';
+import { getDatabase, ref, get, child } from 'firebase/database';
 import { environment } from 'src/environments/environment';
 import { initializeApp } from 'firebase/app';
 
@@ -10,13 +10,12 @@ import { initializeApp } from 'firebase/app';
 })
 export class AforoPage {
   mensajeError: string;
-  currentDate: string = new Date().toLocaleDateString();
+  currentDate: string = new Date().toISOString().slice(0, 10);
   aforoActual: string;
 
   constructor() { }
 
   ionViewDidEnter() {
-    this.escribirAforo()
     this.consultarAforo()
     this.getAforo()
   }
@@ -31,14 +30,6 @@ export class AforoPage {
     console.log("Current capacity: " + this.aforoActual);
   }
 
-  escribirAforo() {
-    const app = initializeApp(environment.firebase);
-    const db = getDatabase(app);
-    set(ref(db, 'aforo/' + this.currentDate), {
-      aforoActual: 12,
-    });
-  }
-
   consultarAforo() {
     const app = initializeApp(environment.firebase);
     const dbRef = ref(getDatabase(app));
@@ -46,7 +37,7 @@ export class AforoPage {
       if (snapshot.exists()) {
         const resultadoPeticion = snapshot.val();
         for (const fecha in resultadoPeticion){
-          if (resultadoPeticion[fecha] === this.currentDate){
+          if (fecha === this.currentDate){
             window.localStorage.setItem('aforoActual', resultadoPeticion[fecha].aforoActual);
             return;
           }

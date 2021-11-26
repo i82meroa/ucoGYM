@@ -15,7 +15,7 @@ export class Tab2Page {
   // eslint-disable-next-line @typescript-eslint/ban-types
   scannedBarCode: {};
   barcodeScannerOptions: BarcodeScannerOptions;
-  currentDate: string = new Date().toLocaleDateString();
+  currentDate: string = new Date().toISOString().slice(0, 10);
   mensajito: string;
   labelBoton: string;
   userEntry: boolean;
