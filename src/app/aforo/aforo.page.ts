@@ -16,19 +16,8 @@ export class AforoPage {
   constructor() { }
 
   ionViewDidEnter() {
-    this.consultarAforo()
-    this.getAforo()
-  }
-
-  getAforo() {
-    if (window.localStorage.getItem('aforoActual') == null) {
-      this.aforoActual = "0"
-    }
-    else {
-      this.aforoActual = window.localStorage.getItem('aforoActual');
-    }
-    console.log("Current capacity: " + this.aforoActual);
-  }
+    this.consultarAforo();
+  };
 
   consultarAforo() {
     const app = initializeApp(environment.firebase);
@@ -38,7 +27,7 @@ export class AforoPage {
         const resultadoPeticion = snapshot.val();
         for (const fecha in resultadoPeticion){
           if (fecha === this.currentDate){
-            window.localStorage.setItem('aforoActual', resultadoPeticion[fecha].aforoActual);
+            this.aforoActual = resultadoPeticion[fecha].aforoActual;
             return;
           }
         }
