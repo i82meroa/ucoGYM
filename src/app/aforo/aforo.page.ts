@@ -43,7 +43,6 @@ export class AforoPage {
           }
         }
       }
-      this.mensajeError = 'No hay registros de aforo para la fecha actual';
     }).catch((error) => {
       console.error(error);
     });
