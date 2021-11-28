@@ -25,6 +25,10 @@ const routes: Routes = [
   {
     path: 'aforo',
     loadChildren: () => import('./aforo/aforo.module').then( m => m.AforoPageModule)
+  },
+  {
+    path: 'edit-profile',
+    loadChildren: () => import('./edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
   }
 ];
 @NgModule({
