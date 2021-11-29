@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { getDatabase, ref, get, child } from 'firebase/database';
 import { environment } from 'src/environments/environment';
 import { initializeApp } from 'firebase/app';
@@ -8,20 +8,16 @@ import { initializeApp } from 'firebase/app';
   templateUrl: './aforo.page.html',
   styleUrls: ['./aforo.page.scss'],
 })
-export class AforoPage implements OnInit {
+export class AforoPage {
   mensajeError: string;
-  currentDate: string = new Date().toLocaleDateString();
+  currentDate: string = new Date().toISOString().slice(0, 10);
   aforoActual: string;
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
-  getAforo() {
-    this.aforoActual = window.localStorage.getItem('aforoActual');
-    console.log("Current capacity: " + this.aforoActual);
-}
+  ionViewDidEnter() {
+    this.consultarAforo();
+  };
 
   consultarAforo() {
     const app = initializeApp(environment.firebase);
@@ -29,14 +25,13 @@ export class AforoPage implements OnInit {
     const referencia = get(child(dbRef, 'aforo/')).then((snapshot) => {
       if (snapshot.exists()) {
         const resultadoPeticion = snapshot.val();
-        for (const aforo in resultadoPeticion){
-          if (resultadoPeticion[aforo].fecha === this.currentDate){
-            window.localStorage.setItem('aforoActual', resultadoPeticion[aforo].aforoActual);
+        for (const fecha in resultadoPeticion){
+          if (fecha === this.currentDate){
+            this.aforoActual = resultadoPeticion[fecha].aforoActual;
             return;
           }
         }
       }
-      this.mensajeError = 'No hay registros de aforo para la fecha actual';
     }).catch((error) => {
       console.error(error);
     });
