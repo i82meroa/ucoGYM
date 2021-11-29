@@ -25,16 +25,16 @@ export class LoginPage {
       if (snapshot.exists()) {
         const resultadoPeticion = snapshot.val();
         for (const user in resultadoPeticion){
-          if (resultadoPeticion[user].user === this.username && resultadoPeticion[user].pass === this.password){
+          if (resultadoPeticion[user].user === this.username && resultadoPeticion[user].password === this.password){
             window.localStorage.setItem('userRol', resultadoPeticion[user].rol);
             window.localStorage.setItem('userAuth', 'true');
             window.localStorage.setItem('userUsername', this.username);
 
             if (resultadoPeticion[user].rol === 'administrador'){
-              this.router.navigateByUrl('/tabs-admin/tab1-admin');
+              this.router.navigateByUrl('/tabs-admin/home-admin');
             }
             else{
-              this.router.navigateByUrl('/tabs/tab1');
+              this.router.navigateByUrl('/tabs/home');
             }
             return;
           }

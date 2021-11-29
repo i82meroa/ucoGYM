@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { Tab1AdminPageRoutingModule } from './tab1-admin-routing.module';
+import { EditProfilePageRoutingModule } from './edit-profile-routing.module';
 
-import { Tab1AdminPage } from './tab1-admin.page';
+import { EditProfilePage } from './edit-profile.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    Tab1AdminPageRoutingModule
+    EditProfilePageRoutingModule
   ],
-  declarations: [Tab1AdminPage]
+  declarations: [EditProfilePage]
 })
-export class Tab1AdminPageModule {}
+export class EditProfilePageModule {}
