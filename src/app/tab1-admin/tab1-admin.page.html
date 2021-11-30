@@ -1,48 +1,48 @@
-<div class="cajon">
-  <ion-app>
-    <ion-header [translucent]="true">
-      <ion-toolbar>
-        <ion-title>
-          AÑADIR PESAJE
-        </ion-title>
-      </ion-toolbar>
-    </ion-header>
-  
-    <ion-content [fullscreen]="true">
-      
-      <ion-label for="fechaPesaje">Fecha de Pesaje</ion-label>
-      <ion-datetime placeholder="selecciona la fecha..."
-                    display-format= "YYYY MMMM DD"
-                    cancelText= "Cancelar"
-                    doneText= "Hecho" 
-                    [ngModel]="fechaPesaje.toISOString()">
-      </ion-datetime>
-  
-      <ion-label for="username">Nombre Usuario</ion-label>
-      <ion-input type="text" [(ngModel)]="username" placeholder="Escribir aquí..."></ion-input>
-  
-      <ion-label for="peso">Peso</ion-label>
-      <ion-input type="text" [(ngModel)]="peso" placeholder="Escribir aquí..."></ion-input>
-  
-      <ion-label for="grasa">Grasa</ion-label>
-      <ion-input type="text" [(ngModel)]="grasa" placeholder="Escribir aquí..."></ion-input>
-  
-      <ion-label for="peso">Masa Muscular</ion-label>
-      <ion-input type="text" [(ngModel)]="masaMuscular" placeholder="Escribir aquí..."></ion-input>
-  
-      <ion-label for="imc">I.M.C</ion-label>
-      <ion-input type="text" [(ngModel)]="imc" placeholder="Escribir aquí..."></ion-input>
+<ion-app>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        AÑADIR PESAJE
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]= "true">
+    <div class="formulario">
+      <ion-card>
+        <ion-card-header>
+          <div class="nuevoPesaje">
+            <ion-card-title>NUEVO PESAJE</ion-card-title>
+          </div>
           
-      <ion-label for="metabolismoBasal">Metabolismo Basal</ion-label>
-      <ion-input type="text" [(ngModel)]="metabolismoBasal" placeholder="Escribir aquí..."></ion-input>
-  
-      <ion-label for="porcentajeAgua">Porcentaje Agua</ion-label>
-      <ion-input type="text" [(ngModel)]="porcentajeAgua" placeholder="Escribir aquí..."></ion-input>
-  
-  
-      <ion-button color= "success" (click) = "anadirPesaje(username, fechaPesaje, peso, imc, metabolismoBasal, grasa, masaMuscular, porcentajeAgua)">Guardar Pesaje</ion-button>
-      <ion-button color="danger" (click) = "logout()">Logout</ion-button>
-  
-    </ion-content>
-  </ion-app>
-</div>
+        </ion-card-header>
+        <div class="etNormales">
+          <ion-label for="username">Nombre Usuario</ion-label>
+          <ion-input type="text" [(ngModel)]="username" placeholder="Escribir aquí..."></ion-input>
+      
+          <ion-label for="peso">Peso</ion-label>
+          <ion-input type="text" [(ngModel)]="peso" placeholder="Escribir aquí..."></ion-input>
+      
+          <ion-label for="grasa">Grasa</ion-label>
+          <ion-input type="text" [(ngModel)]="grasa" placeholder="Escribir aquí..."></ion-input>
+      
+          <ion-label for="peso">Masa Muscular</ion-label>
+          <ion-input type="text" [(ngModel)]="masaMuscular" placeholder="Escribir aquí..."></ion-input>
+      
+          <ion-label for="imc">I.M.C</ion-label>
+          <ion-input type="text" [(ngModel)]="imc" placeholder="Escribir aquí..."></ion-input>
+              
+          <ion-label for="metabolismoBasal">Metabolismo Basal</ion-label>
+          <ion-input type="text" [(ngModel)]="metabolismoBasal" placeholder="Escribir aquí..."></ion-input>
+      
+          <ion-label for="porcentajeAgua">Porcentaje Agua</ion-label>
+          <ion-input type="text" [(ngModel)]="porcentajeAgua" placeholder="Escribir aquí..."></ion-input>
+        </div>
+      </ion-card>
+      
+      <ion-card-content>
+        <ion-button color= "success" (click) = "anadirPesaje(username, peso, imc, metabolismoBasal, grasa, masaMuscular, porcentajeAgua)">Guardar Pesaje</ion-button>
+      </ion-card-content>
+      
+    </div>
+  </ion-content>

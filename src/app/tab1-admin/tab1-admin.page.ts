@@ -37,7 +37,7 @@ export class Tab1AdminPage {
         console.log('Este usuario ya tiene un pesaje. Añadiendo pesaje...');
         console.log(resultadoPeticion);
 
-        const idUnico = Date.now();
+        const idUnico =  new Date().toISOString().slice(0, 10);
 
         const nuevoPesaje = {
           [idUnico]: {
@@ -58,7 +58,7 @@ export class Tab1AdminPage {
       }
       else {
         console.log('Este usuario no tiene asignado ningun pesaje. Creando pesaje...');
-        const idUnico = Date.now();
+        const idUnico = new Date().toISOString().slice(0, 10);
 
         const nuevoPesaje = {
           [idUnico]: {
