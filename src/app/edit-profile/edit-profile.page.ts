@@ -60,7 +60,7 @@ export class EditProfilePage implements OnInit {
           fechaNacimiento: this.fechaNacimiento,
           rol: 'usuario'
         });
-        this.router.navigateByUrl('/login');
+        this.router.navigateByUrl('/');
       }
     });
   }

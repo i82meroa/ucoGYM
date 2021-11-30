@@ -23,6 +23,7 @@ export class Tab3Page {
 
   ionViewDidEnter(){
     this.showRoutines();
+    this.listaEjercicios = [];
   }
 
   showRoutines(){
