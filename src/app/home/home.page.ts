@@ -28,6 +28,10 @@ export class HomePage {
     this.router.navigateByUrl('/edit-profile');
   }
 
+  irHistorial(){
+    this.router.navigateByUrl('/historial');
+  }
+
   logout(){
     window.localStorage.clear();
     this.router.navigateByUrl('/login');
