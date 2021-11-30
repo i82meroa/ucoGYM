@@ -24,8 +24,13 @@ export class HomePage {
     this.router.navigateByUrl('/aforo');
   }
 
+<<<<<<< HEAD
   irHistorial() {
     this.router.navigateByUrl('/historial');
+=======
+  irEditarPerfil() {
+    this.router.navigateByUrl('/edit-profile');
+>>>>>>> 305c9f5da83322ed3cf149310160a883e687f252
   }
 
   logout(){

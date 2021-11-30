@@ -29,7 +29,12 @@ export class Tab2AdminPage {
     const db = getDatabase(app);
     console.log(this.nombreRutina);
     console.log(this.ejercicios);
-    set(ref(db, 'rutinas/' + this.nombreRutina), this.ejercicios);
+    const IdUnico = Date.now();
+    const nuevaRutina = {
+      nombreRutina: this.nombreRutina,
+      ejercicios : this.ejercicios
+    }
+    set(ref(db, 'rutinas/' + IdUnico), nuevaRutina);
     this.ejercicios = [];
   };
 
