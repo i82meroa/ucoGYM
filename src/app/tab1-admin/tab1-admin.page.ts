@@ -18,7 +18,7 @@ export class Tab1AdminPage {
   grasa: number;
   masaMuscular: number;
   porcentajeAgua: number;
-
+  fecha: string;
 
   constructor(private router: Router) {}
 
@@ -47,7 +47,8 @@ export class Tab1AdminPage {
             metabolismoBasal: _metabolismoBasal,
             grasa: _grasa,
             masaMuscular: _masaMuscular,
-            porcentajeAgua: _porcentajeAgua
+            porcentajeAgua: _porcentajeAgua,
+            fecha: idUnico
           }
         };
 
@@ -67,7 +68,8 @@ export class Tab1AdminPage {
             metabolismoBasal: _metabolismoBasal,
             grasa: _grasa,
             masaMuscular: _masaMuscular,
-            porcentajeAgua: _porcentajeAgua
+            porcentajeAgua: _porcentajeAgua,
+            fecha : idUnico
           }
         };
         set(ref(db, 'pesajes/' +_user), nuevoPesaje);
