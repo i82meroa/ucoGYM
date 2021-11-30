@@ -1,9 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>historial</ion-title>
+    <ion-back-button slot="start"></ion-back-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen="true" slot="fixed" class="contenido">
+  <div class="titulo">
+    <ion-icon name="stats-chart"></ion-icon>
+    <h1>TUS PESAJES</h1>
+  </div>
 
+  <ion-list class="lista">
+
+    <ion-button (click)="obtenerPesaje()" class="fecha">2021-11-25 </ion-button>
+    <ion-button (click)="obtenerPesaje()" class="fecha">2021-11-26 </ion-button>
+    <ion-button (click)="obtenerPesaje()" class="fecha">2021-11-27 </ion-button>
+    <ion-button (click)="obtenerPesaje()" class="fecha">2021-11-28 </ion-button>
+    <ion-button (click)="obtenerPesaje()" class="fecha">2021-11-29 </ion-button>
+  </ion-list>
+
+  
 </ion-content>

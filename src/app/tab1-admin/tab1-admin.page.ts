@@ -22,7 +22,7 @@ export class Tab1AdminPage {
 
   constructor(private router: Router) {}
 
-  anadirPesaje(_user, _fechaPesaje, _peso, _imc, _metabolismoBasal, _grasa, _masaMuscular, _porcentajeAgua) {
+  anadirPesaje(_user, _peso, _imc, _metabolismoBasal, _grasa, _masaMuscular, _porcentajeAgua) {
     console.log('Bindeo correcto. Username: ',this.username,' fecha de Pesaje: ', this.fechaPesaje, ' Peso: ', this.peso, ' imc: ',
     this.imc, ' Metabolismo Basal: ', this.metabolismoBasal, ' Grasa: ', this.grasa, ' Masa Muscular: ', this.masaMuscular,
     ' Porcentaje de agua: ', this.porcentajeAgua);
@@ -37,12 +37,11 @@ export class Tab1AdminPage {
         console.log('Este usuario ya tiene un pesaje. Añadiendo pesaje...');
         console.log(resultadoPeticion);
 
-        const idUnico = Date.now();
+        const idUnico = new Date().toISOString().slice(0, 10);
 
         const nuevoPesaje = {
           [idUnico]: {
             username: _user,
-            fechaPesaje: _fechaPesaje,
             peso: _peso,
             imc: _imc,
             metabolismoBasal: _metabolismoBasal,
@@ -58,12 +57,11 @@ export class Tab1AdminPage {
       }
       else {
         console.log('Este usuario no tiene asignado ningun pesaje. Creando pesaje...');
-        const idUnico = Date.now();
+        const idUnico = new Date().toISOString().slice(0, 10);
 
         const nuevoPesaje = {
           [idUnico]: {
             username: _user,
-            fechaPesaje: _fechaPesaje,
             peso: _peso,
             imc: _imc,
             metabolismoBasal: _metabolismoBasal,

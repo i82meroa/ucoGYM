@@ -24,6 +24,10 @@ export class HomePage {
     this.router.navigateByUrl('/aforo');
   }
 
+  irHistorial() {
+    this.router.navigateByUrl('/historial');
+  }
+
   logout(){
     window.localStorage.clear();
     this.router.navigateByUrl('/login');
