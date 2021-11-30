@@ -4,8 +4,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true">
     <ion-label for="nombre">Nombre:</ion-label>
     <ion-input type="text" [(ngModel)]="nombre" placeholder="Escribir aquí..."></ion-input>
     <ion-label for="apellidos">Apellidos:</ion-label>
@@ -20,7 +19,6 @@
     <ion-input type="text" [(ngModel)]="email" placeholder="Escribir aquí..."></ion-input>
     <ion-label for="pass">Contraseña:</ion-label>
     <ion-input type="password" [(ngModel)]="pass" placeholder="Escribir aquí..."></ion-input>
-  </ion-content>
   
   
   <ion-button (click) = "editProfile()" id="botonRegistrar">Editar Perfil</ion-button>
