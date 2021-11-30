@@ -1,3 +1,4 @@
+/* eslint-disable guard-for-in */
 import { Component } from '@angular/core';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, get, child, set } from 'firebase/database';
@@ -11,46 +12,42 @@ import { Router } from '@angular/router';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
- mensajeError: String ;
- nombreRutina: any = [] ;
-  rutina: String;
-  ListaEjercicios: any = [];
+  mensajeError: string;
+  nombreRutina: any = [] ;
+  rutina: string;
+  listaEjercicios: any = [];
   ejercicio: string;
-  NRutina: string;
-
-
- 
+  rutinas: any = [];
 
   constructor() {}
 
+  ionViewDidEnter(){
+    this.showRoutines();
+  }
 
-  ShowRoutines(){
+  showRoutines(){
     const app = initializeApp(environment.firebase);
     const db = getDatabase(app);
     const dbRef = ref(getDatabase(app));
     const referencia= get(child(dbRef, 'rutinas/')).then((snapshot)=> {
 
-      if (snapshot.exists())
-      {
+      if (snapshot.exists()){
         const resultadoPeticion = snapshot.val();
         console.log(resultadoPeticion);
         for (const i in resultadoPeticion){
-       
-             this.nombreRutina.push(resultadoPeticion[i].nombreRutina)
-           }
-          console.log(this.nombreRutina) 
-          this.mensajeError = 'Esta rutina no existe en nuestro plan';
-      }
-  }).catch((error) => {
-    console.error(error);
-  
-  });
+          this.rutinas.push(resultadoPeticion[i]);
+        };
+        console.log('Rutinas: ',this.rutinas);
+        this.mensajeError = 'Esta rutina no existe en nuestro plan';
+      }}).catch((error) => {
+        console.error(error);
+      });
 
-   this.nombreRutina = []};
+   this.rutinas = [];
+  };
 
 
-mostrarRutina(){
-
+mostrarRutina(nombreRutina: string){
   const app = initializeApp(environment.firebase);
   const db = getDatabase(app);
   const dbRef = ref(getDatabase(app));
@@ -61,22 +58,16 @@ mostrarRutina(){
       const resultadoPeticion = snapshot.val();
       console.log(resultadoPeticion);
       for (const i in resultadoPeticion){
-       console.log (this.NRutina)
-        if(this.NRutina === resultadoPeticion[i].nombreRutina)
+        if(nombreRutina === resultadoPeticion[i].nombreRutina)
         {
-          this.ListaEjercicios=resultadoPeticion[i].ejercicios
-        }          
+          this.listaEjercicios = resultadoPeticion[i].ejercicios;
+        };
       }
-      
-      console.log(this.ListaEjercicios);
+      console.log(this.listaEjercicios);
       this.mensajeError = 'Esta rutina no existe en nuestro plan';
-    }
-    
-
-}).catch((error) => {
-  console.error(error);
-
-});
-this.ListaEjercicios = [];
-}
+    }}).catch((error) => {
+      console.error(error);
+    });
+this.listaEjercicios = [];
+  }
 }

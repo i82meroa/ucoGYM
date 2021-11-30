@@ -6,34 +6,18 @@
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content fullscreen="true" slot="fixed" class="rutinas">
-  <ion-toolbar>
-    <ion-button  size="small" color= "primary" (click) = "ShowRoutines()">Listas Rutinas</ion-button>
-    <ion-button  size="small" color= "primary"  (click)= "mostrarRutina()"> Mostrar Rutina</ion-button>
-  </ion-toolbar>
-    
-
-  <ion-toolbar>  
-   <ion-label size = "small" for="NRutina">Introduce nombre rutina que desea:</ion-label>
-   <ion-input type="text"  [(ngModel)]="NRutina" placeholder="Escribir aquí..."></ion-input>
-  </ion-toolbar>
 
   <div class="rutinas">
-   <ion-label>Rutinas</ion-label>
-   <ul *ngFor="let rutina of nombreRutina">
-   <ion-label>{{rutina}}</ion-label>
-  </ul>
+
+   <ion-button *ngFor="let rutina of rutinas" (click) = mostrarRutina(rutina.nombreRutina)>{{rutina.nombreRutina}}</ion-button>
+  
+    <div class="ejercicios"> 
+      <ul *ngFor="let ejercicio of listaEjercicios">
+        <li>Ejercicio: {{ejercicio.NombreEjercicio}}</li>
+        <li>Repeticiones: {{ejercicio.SeriesRepeticiones}}</li>  
+      </ul>
+    </div>
+
   </div>
-
-
-  <div class="ejercicios"> 
-    <ul *ngFor="let ejercicio of ListaEjercicios">
-       <li> Ejercicio: {{ejercicio.NombreEjercicio}}</li>
-       <li>Repeticiones: {{ejercicio.SeriesRepeticiones}}</li>  
-    </ul>
- </div>
-   
-
-
 </ion-content>
