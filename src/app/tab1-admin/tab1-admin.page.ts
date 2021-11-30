@@ -22,7 +22,7 @@ export class Tab1AdminPage {
 
   constructor(private router: Router) {}
 
-  anadirPesaje(_user, _fechaPesaje, _peso, _imc, _metabolismoBasal, _grasa, _masaMuscular, _porcentajeAgua) {
+  anadirPesaje(_user, _peso, _imc, _metabolismoBasal, _grasa, _masaMuscular, _porcentajeAgua) {
     console.log('Bindeo correcto. Username: ',this.username,' fecha de Pesaje: ', this.fechaPesaje, ' Peso: ', this.peso, ' imc: ',
     this.imc, ' Metabolismo Basal: ', this.metabolismoBasal, ' Grasa: ', this.grasa, ' Masa Muscular: ', this.masaMuscular,
     ' Porcentaje de agua: ', this.porcentajeAgua);
@@ -42,7 +42,7 @@ export class Tab1AdminPage {
         const nuevoPesaje = {
           [idUnico]: {
             username: _user,
-            fechaPesaje: _fechaPesaje,
+            fecha: idUnico,
             peso: _peso,
             imc: _imc,
             metabolismoBasal: _metabolismoBasal,
@@ -63,7 +63,7 @@ export class Tab1AdminPage {
         const nuevoPesaje = {
           [idUnico]: {
             username: _user,
-            fechaPesaje: _fechaPesaje,
+            fecha: idUnico,
             peso: _peso,
             imc: _imc,
             metabolismoBasal: _metabolismoBasal,

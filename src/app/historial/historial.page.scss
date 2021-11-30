@@ -1,0 +1,51 @@
+ion-toolbar {
+    --background: transparent;
+}
+ion-back-button{
+    --color: black;
+  }
+.contenido {
+    --background: url(../../assets/backgroundHistorial.jpg) no-repeat top center/cover fixed, #fff;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.titulo {
+    text-align: center;
+    h1 {
+        font-weight: bold;
+        color: black;
+    }
+    ion-icon {
+        font-size: 54px;
+        color: black;
+    }
+}
+
+.bascula {
+    font-size: 64px;
+}
+
+.lista {
+    background: transparent;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+
+    .fecha {
+        background: transparent;
+        font-size: 20px;
+        text-align: center;
+        color: black;
+        font-weight: 400;
+        margin-top: 15px;
+        letter-spacing: 3px;
+    }
+}
+
+.resultados{
+    color:black;
+}

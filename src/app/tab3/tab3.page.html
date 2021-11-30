@@ -1,17 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Elegir Rutina
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content fullscreen="true" slot="fixed" class="rutinas">
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <div class="rutinas">
+
+   <ion-button *ngFor="let rutina of rutinas" (click) = mostrarRutina(rutina.nombreRutina)>{{rutina.nombreRutina}}</ion-button>
+  
+    <div class="ejercicios"> 
+      <ul *ngFor="let ejercicio of listaEjercicios">
+        <li>Ejercicio: {{ejercicio.NombreEjercicio}}</li>
+        <li>Repeticiones: {{ejercicio.SeriesRepeticiones}}</li>  
+      </ul>
+    </div>
+
+  </div>
 </ion-content>

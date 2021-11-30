@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" slot="fixed" class="contenido">
+  <div class="titulo">
+    <ion-icon name="stats-chart"></ion-icon>
+    <h1>TUS PESAJES</h1>
+  </div>
+
+ <div class= "pesajes">
+  <ion-button *ngFor="let pesaje of pesajesList" (click) = obtenerPesaje(pesaje.fecha)>{{pesaje.fecha}}</ion-button>
+    <div class="resultados">
+         <ul *ngFor= "let resultado of resultadosList">
+              <li>Peso: {{resultado.peso}}</li>
+              <li>Grasa: {{resultado.grasa}}</li>
+              <li>Masa muscular: {{resultado.masaMuscular}}</li>
+              <li>IMC: {{resultado.imc}}</li>
+              <li>Metabolismo basal: {{resultado.metabolismoBasal}}</li>
+              <li>Porcentaje agua: {{resultado.porcentajeAgua}}</li>
+         </ul>
+     </div>
+
+ </div>
+
+
+</ion-content>
