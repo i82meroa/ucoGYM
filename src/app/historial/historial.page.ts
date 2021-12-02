@@ -1,3 +1,4 @@
+/* eslint-disable guard-for-in */
 import { Component, OnInit } from '@angular/core';
 import { initializeApp } from 'firebase/app';
 import { getDatabase, ref, get, child } from 'firebase/database';
@@ -9,6 +10,7 @@ import { Router } from '@angular/router';
   templateUrl: './historial.page.html',
   styleUrls: ['./historial.page.scss'],
 })
+<<<<<<< HEAD
 export class HistorialPage {
   username: String;
   pesajesList: any = [];
@@ -18,6 +20,18 @@ export class HistorialPage {
   resultado : string;
 
   
+=======
+
+export class HistorialPage {
+  username: string;
+  pesajesList: any = [];
+  pesaje: string;
+
+  resultadosList: any = [];
+  resultado: string;
+
+
+>>>>>>> 1b159fdceeee3bf29599ec41684cfa292392246f
 
   constructor(private router: Router) { }
 
@@ -28,8 +42,61 @@ export class HistorialPage {
   ionViewDidEnter(){
     this.obtenerFecha();
     this.resultadosList = [];
+<<<<<<< HEAD
     
+=======
+
   }
+
+  obtenerFecha() {
+    this.getUsername();
+    console.log('Usuario encontrado. Nombre: ', this.username);
+    const app = initializeApp(environment.firebase);
+    const dbRef = ref(getDatabase(app));
+    const referencia = get(child(dbRef, 'pesajes/' +this.username)).then((snapshot)=> {
+
+      if(snapshot.exists()) {
+        const resultadoPeticion = snapshot.val();
+        console.log('Este usuario tiene algún pesaje.');
+
+
+
+        for(const i in resultadoPeticion) {
+          this.pesajesList.push(resultadoPeticion[i]);
+          console.log(this.pesajesList);
+        }
+      }
+
+    }).catch((error)=> {
+      console.error(error);
+    });
+    this.pesajesList = [];
+>>>>>>> 1b159fdceeee3bf29599ec41684cfa292392246f
+  }
+obtenerPesaje(fecha: string){
+
+  const app = initializeApp(environment.firebase);
+  const dbRef = ref(getDatabase(app));
+  const referencia = get(child(dbRef, 'pesajes/' +this.username)).then((snapshot)=> {
+
+    if(snapshot.exists()) {
+      const resultadoPeticion = snapshot.val();
+
+      for(const i in resultadoPeticion) {
+        if(fecha === resultadoPeticion[i].fecha)
+        {
+          this.resultadosList.push(resultadoPeticion[i]);
+          console.log('coger resultado', this.resultadosList);
+        }
+
+      }
+    }
+
+  }).catch((error)=> {
+    console.error(error);
+  });
+  this.resultadosList = [];
+}
 
   obtenerFecha() {
     this.getUsername();

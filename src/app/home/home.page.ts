@@ -33,6 +33,10 @@ export class HomePage {
 >>>>>>> 305c9f5da83322ed3cf149310160a883e687f252
   }
 
+  irHistorial(){
+    this.router.navigateByUrl('/historial');
+  }
+
   logout(){
     window.localStorage.clear();
     this.router.navigateByUrl('/login');

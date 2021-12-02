@@ -37,11 +37,19 @@ export class Tab1AdminPage {
         console.log('Este usuario ya tiene un pesaje. Añadiendo pesaje...');
         console.log(resultadoPeticion);
 
+<<<<<<< HEAD
         const idUnico = new Date().toISOString().slice(0, 10);
+=======
+        const idUnico =  new Date().toISOString().slice(0, 10);
+>>>>>>> 1b159fdceeee3bf29599ec41684cfa292392246f
 
         const nuevoPesaje = {
           [idUnico]: {
             username: _user,
+<<<<<<< HEAD
+=======
+            fecha: idUnico,
+>>>>>>> 1b159fdceeee3bf29599ec41684cfa292392246f
             peso: _peso,
             imc: _imc,
             metabolismoBasal: _metabolismoBasal,
@@ -63,6 +71,10 @@ export class Tab1AdminPage {
         const nuevoPesaje = {
           [idUnico]: {
             username: _user,
+<<<<<<< HEAD
+=======
+            fecha: idUnico,
+>>>>>>> 1b159fdceeee3bf29599ec41684cfa292392246f
             peso: _peso,
             imc: _imc,
             metabolismoBasal: _metabolismoBasal,
